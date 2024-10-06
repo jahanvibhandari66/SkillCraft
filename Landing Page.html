@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        /* Styling the header and navigation bar */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 1em;
+            margin: 0;
+            background: #282828;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffa726;
+            transform: scale(1.2);
+        }
+
+        .nav-scrolled {
+            background-color: #212121;
+        }
+
+        /* Styling for sections */
+        section {
+            padding: 100px 20px;
+            margin: 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        #home {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff4081 30%, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #home h1 {
+            font-size: 3em;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        #about {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #42a5f5 30%, #00bcd4);
+        }
+
+        #services {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #66bb6a 30%, #388e3c);
+        }
+
+        #contact {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffa726 30%, #f57c00);
+        }
+
+        /* Customizing the sections content */
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 20px 0;
+            font-size: 1.2em;
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        ul li strong {
+            color: #ffa726;
+        }
+
+        /* Footer or accents */
+        #services::after,
+        #contact::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+        }
+
+        #services::after {
+            background-color: #558b2f; /* Darker accent */
+        }
+
+        #contact::after {
+            background-color: #e65100; /* Darker orange accent */
+        }
+
+        /* Styling for contact info */
+        p strong {
+            color: #ffa726;
+            font-weight: 600;
+        }
+
+        /* Add smooth hover effect for links */
+        a {
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Our Landing Page</h1>
+        <p>Your success starts here. Let's build something great together.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a passionate team dedicated to providing innovative solutions that drive success. Our mission is to deliver high-quality services tailored to meet the unique needs of each client. With a commitment to excellence and a focus on customer satisfaction, we strive to exceed expectations and build lasting relationships.</p>
+        <p>Founded in 2020, we have quickly established ourselves as a trusted partner for companies looking to innovate and grow. Our team of experts brings years of experience and a deep understanding of the latest technologies, ensuring that we deliver solutions that are both cutting-edge and effective.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Explore our diverse range of services designed to meet your business needs:</p>
+        <ul>
+            <li><strong>Web Development:</strong> Creating responsive, user-friendly websites that drive engagement and conversions.</li>
+            <li><strong>Digital Marketing:</strong> Leveraging SEO, social media, and content marketing to boost your online presence.</li>
+            <li><strong>Consulting:</strong> Providing expert advice to help you navigate complex business challenges and achieve your goals.</li>
+            <li><strong>Custom Solutions:</strong> Tailoring our offerings to meet the specific needs of your business.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Whether you have a question about our services, need assistance, or want to discuss a project, our team is ready to help.</p>
+        <p><strong>Email:</strong> contact@yourcompany.com</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Address:</strong> 123 Main Street, Suite 500, Your City, Your Country</p>
+        <p>Feel free to reach out to us via email, phone, or by visiting our office. We are here to assist you and ensure you have the best experience possible.</p>
+    </section>
+
+    <script>
+        // This function will run whenever the user scrolls the page
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("nav-scrolled");
+            } else {
+                navbar.classList.remove("nav-scrolled");
+            }
+        });
+    </script>
+</body>
+</html>
